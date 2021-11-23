@@ -1,0 +1,23 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: package repository update
+      apt:
+        update_cache: yes
+
+    - name: download monitoring-agent
+      get_url:
+        url: https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
+        dest: /usr/local/add-google-cloud-ops-agent-repo.sh
+        mode: 0744
+
+    - name: install monitoring-agent
+      shell: bash /usr/local/add-google-cloud-ops-agent-repo.sh --also-install
+      become: yes
+
+    - name: google-cloud-ops-agent start & enable
+      systemd:
+        name: google-cloud-ops-agent
+        state: restarted
+        daemon_reload: yes
+        enabled: yes
