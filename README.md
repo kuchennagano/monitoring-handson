@@ -76,5 +76,6 @@
 ## 確認
 1. VPC・サブネット・NATができている
 2. Compute Engine・IAP・ファイアウォールルールができている
-3. VMインスタンスにsshできている
+3. VMインスタンスにsshできている・ops agentが起動している  
+   `sudo systemctl status google-cloud-ops-agent"*"`
 4. モニタリングにアラートができている
