@@ -1,7 +1,7 @@
 # リソース監視用のアラートポリシーをlocal変数に定義
 locals {
-  notification-channel-warn = "10852550799377080773"
-  notification-channel-crit = "9971492931548053371"
+  notification-channel-warn = "xxxxxxxxxxxxxxxxxx" #ここを修正
+  notification-channel-crit = "xxxxxxxxxxxxxxxxxx" #ここを修正
   monitoring = {
     gce-cpu-usage-warning = {
       display_name          = "${local.project} / GCE / CPU-Usage / Warning"

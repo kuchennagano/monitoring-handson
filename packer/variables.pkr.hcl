@@ -7,7 +7,7 @@ variables {
     network = "projects/ca-nagano-taichi-test/global/networks/default" #project名変更
     subnetwork = "projects/ca-nagano-taichi-test/regions/asia-northeast1/subnetworks/default" #project名変更
     tags = "monitoring-server"
-    image_name = "tnagano-custom-image-ubuntu2004" #変更
+    image_name = "tnagano-custom-image-ubuntu2004" #任意の名前に変更
     playbook_file = "./playbook.yml"
-    groups = ["tnagano-custom-image-ubuntu2004"] #変更
+    groups = ["tnagano-custom-image-ubuntu2004"] #任意の名前に変更
 }

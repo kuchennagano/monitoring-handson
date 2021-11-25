@@ -13,14 +13,14 @@ resource "google_compute_firewall" "allow-ssh-iap" {
 }
 
 ## 上記のIAP接続のためのポリシー作成
-data "google_iam_policy" "iap-ssh-user" {
-  binding {
-    role = "roles/iap.tunnelResourceAccessor"
-    members = [
-      "user:${local.my-email}",
-    ]
-  }
-}
+# data "google_iam_policy" "iap-ssh-user" {
+#   binding {
+#     role = "roles/iap.tunnelResourceAccessor"
+#     members = [
+#       "user:${local.my-email}",
+#     ]
+#   }
+# }
 
 
 # VPC内通信用ファイアウォールルール作成

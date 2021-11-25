@@ -1,7 +1,7 @@
 # 変数定義
 locals {
   machine_type = "f1-micro"
-  image-name   = "tnagano-custom-image-ubuntu2004-2021-11-23t08-09-43z" #変更
+  image-name   = "tnagano-terraform-image-ubuntu2004-2021-11-24t23-38-37z" #変更
   zone         = "asia-northeast1-a"
 }
 
@@ -35,14 +35,9 @@ resource "google_compute_instance" "monitoring_gce" {
   boot_disk {
     initialize_params {
       image = local.image-name
+      size  = "20"
     }
   }
-
-  // Local SSD disk
-  scratch_disk {
-    interface = "SCSI"
-  }
-
   network_interface {
     subnetwork = google_compute_subnetwork.vpc_network_subnet.name
   }
