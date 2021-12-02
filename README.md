@@ -68,7 +68,6 @@
 % cd ../packer
 % sudo apt install packer
 % sudo apt install ansible
-% cd packer
 % packer build .
 
 # イメージの作成確認後、一時的なネットワークの削除
