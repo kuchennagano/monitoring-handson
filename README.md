@@ -58,10 +58,23 @@
 ```
 2. ゴールデンイメージの作成
 ```
+# 一時的なネットワークの作成
+% cd network/
+% terraform init
+% terraform plan 
+% terraform apply
+
+# ゴールデンイメージの作成(variables.pkr.hclのネットワーク修正を忘れずに)
+% cd ../packer
 % sudo apt install packer
 % sudo apt install ansible
 % cd packer
 % packer build .
+
+# イメージの作成確認後、一時的なネットワークの削除
+% cd ../network/
+% terraform destroy
+
 ```
 3. gce.tfの修正
 - イメージ名を手順2で作成したものに変更する (4行目)
